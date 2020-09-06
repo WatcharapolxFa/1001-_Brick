@@ -6,46 +6,37 @@ int main()
     printf(" InPut \n\n");
     struct area
     {
-        int N, M, i, j, k;
+        int a, b, c, e, d;
         char brick[21][21];
         int block[21];
 
     }Brick;
+    scanf("%d %d", &Brick.a, &Brick.b);
 
+    for (Brick.c = 0; Brick.c < Brick.a; Brick.c++)
 
+        scanf("%s", Brick.brick[Brick.c]);
 
+    for (Brick.c = 0; Brick.c < Brick.b; Brick.c++)
 
+        scanf("%d", &Brick.block[Brick.c]);
 
-    scanf("%d %d", &Brick.N, &Brick.M);
+    for (Brick.e = 0; Brick.e < Brick.b; Brick.e++)
 
-
-
-    for (Brick.i = 0; Brick.i < Brick.N; Brick.i++)
-
-        scanf("%s", Brick.brick[Brick.i]);
-
-    for (Brick.i = 0; Brick.i < Brick.M; Brick.i++)
-
-        scanf("%d", &Brick.block[Brick.i]);
-
-
-
-    for (Brick.j = 0; Brick.j < Brick.M; Brick.j++)
-
-        if (Brick.block[Brick.j] > 0)
+        if (Brick.block[Brick.e] > 0)
         {
 
-            for (Brick.i = 0; Brick.i < Brick.N, Brick.brick[Brick.i][Brick.j] == '.'; Brick.i++);
+            for (Brick.c = 0; Brick.c < Brick.a, Brick.brick[Brick.c][Brick.e] == '.'; Brick.c++);
 
-            for (Brick.k = 0; Brick.k < Brick.block[Brick.j]; Brick.k++)
+            for (Brick.d = 0; Brick.d < Brick.block[Brick.e]; Brick.d++)
 
             {
 
-                Brick.brick[Brick.i - 1][Brick.j] = '#';
+                Brick.brick[Brick.c - 1][Brick.e] = '#';
 
-                Brick.i--;
+                Brick.c--;
 
-                if (Brick.i == 0)
+                if (Brick.c == 0)
 
                     break;
 
@@ -53,14 +44,9 @@ int main()
 
         }printf("\n\nOutPut \n\n");
 
+        for (Brick.c = 0; Brick.c < Brick.b; Brick.c++)
 
-
-        for (Brick.i = 0; Brick.i < Brick.N; Brick.i++)
-
-            printf("%s\n", Brick.brick[Brick.i]);
-
-
-
+            printf("%s\n", Brick.brick[Brick.c]);
         return 0;
 
 }
